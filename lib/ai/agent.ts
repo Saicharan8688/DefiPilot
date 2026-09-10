@@ -23,7 +23,7 @@ import {
 } from "@/lib/ai/tools";
 import type { Address, DeFiOpportunity, Recommendation } from "@/lib/types";
 
-const MODEL = process.env.OPENAI_MODEL ?? "gpt-4o-mini";
+const MODEL = process.env.OPENROUTER_MODEL ?? "openai/gpt-4o-mini";
 const MAX_ROUNDS = 7;
 
 const SYSTEM_PROMPT = `You are DeFiPilot, a financial analysis agent for DeFi. You analyze a wallet, discover DeFi opportunities, quantify risk, and produce an explainable allocation plan.
@@ -98,9 +98,18 @@ const EXPLANATION_SCHEMA: Record<string, unknown> = {
 };
 
 function getClient(): OpenAI | null {
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) return null;
-  return new OpenAI({ apiKey, timeout: 60_000, maxRetries: 1 });
+  return new OpenAI({
+    apiKey,
+    baseURL: "https://openrouter.ai/api/v1",
+    defaultHeaders: {
+      "HTTP-Referer": process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
+      "X-Title": "DeFiPilot",
+    },
+    timeout: 60_000,
+    maxRetries: 1,
+  });
 }
 
 export async function runAnalysisAgent(address: Address): Promise<Recommendation> {

@@ -49,12 +49,36 @@ test('Record 60-second DeFiPilot demo', async ({ page }) => {
   await aiSection.scrollIntoViewIfNeeded();
   await page.waitForTimeout(2000);
 
+  // Debug: check what's in the AI analysis section
+  const aiSectionContent = await aiSection.innerHTML();
+  console.log('AI Analysis section content length:', aiSectionContent.length);
+  console.log('AI Analysis section preview:', aiSectionContent.substring(0, 500));
+
   // Wait for AI Analysis to complete - the progress bar should finish and recommendation appear
-  // The AI analysis can take 20-30 seconds in fallback mode
-  await page.waitForTimeout(25000);
+  // The AI analysis can take 30-40 seconds in fallback mode with network latency
+  await page.waitForTimeout(45000);
+
+  // Debug: check again
+  const aiSectionContent2 = await aiSection.innerHTML();
+  console.log('AI Analysis section content length after wait:', aiSectionContent2.length);
+  console.log('AI Analysis section preview after wait:', aiSectionContent2.substring(0, 500));
+
+  // Check if there's an error state
+  const errorState = aiSection.locator('.text-red-300, [class*="error"], [class*="Error"]');
+  const errorCount = await errorState.count();
+  console.log('Error state count:', errorCount);
+  if (errorCount > 0) {
+    const errorText = await errorState.first().innerText();
+    console.log('Error text:', errorText);
+  }
+
+  // Check if there's a loading state
+  const loadingState = aiSection.locator('[class*="Spinner"], [class*="spinner"], [class*="loading"]');
+  const loadingCount = await loadingState.count();
+  console.log('Loading state count:', loadingCount);
 
   // Wait for the recommendation section to appear
-  await page.waitForSelector('h3:has-text("Recommended allocation")', { timeout: 30000 });
+  await page.waitForSelector('h2:has-text("Recommended allocation")', { timeout: 60000 });
 
   // --- 25-40s: Live Yield Scan + Risk ---
   const yieldScan = page.locator('h2:has-text("Live yield scan")');
@@ -78,7 +102,7 @@ test('Record 60-second DeFiPilot demo', async ({ page }) => {
   await page.waitForTimeout(2000);
 
   // --- 40-50s: AI Recommendation ---
-  const recHeader = page.locator('h3:has-text("Recommended allocation")');
+  const recHeader = page.locator('h2:has-text("Recommended allocation")');
   await expect(recHeader).toBeVisible({ timeout: 10000 });
   await recHeader.scrollIntoViewIfNeeded();
   await page.waitForTimeout(1000);
@@ -90,7 +114,14 @@ test('Record 60-second DeFiPilot demo', async ({ page }) => {
   }
 
   // --- 50-57s: Simulation + Transaction Preview ---
-  const simulateHeader = page.locator('h3:has-text("Simulate strategy")');
+  const simulateBtn = page.locator('button:has-text("Simulate strategy")');
+  await expect(simulateBtn).toBeVisible({ timeout: 10000 });
+  await simulateBtn.scrollIntoViewIfNeeded();
+  await simulateBtn.click();
+  await page.waitForTimeout(3000);
+
+  // Wait for simulation results panel to appear
+  const simulateHeader = page.locator('h2:has-text("Simulate strategy")');
   await expect(simulateHeader).toBeVisible({ timeout: 10000 });
   await simulateHeader.scrollIntoViewIfNeeded();
   await page.waitForTimeout(800);
