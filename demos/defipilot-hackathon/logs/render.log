@@ -1,0 +1,40 @@
+  lint: 0 error(s), 0 warning(s), 1 note(s) — predicted narration ≈61s @ 2.6 w/s
+    · [nav-first] s2-connect#1: scene opens with a click — the previous screen stays up (and this scene's narration starts over it) while the navigation lands
+    → pre-navigate: move the nav action to the END of the previous scene so this scene opens on its screen
+
+▶ Generating narration (local Kokoro-82M, in-process)
+  scene s1-problem: "DeFi yields are fragmented. DeFiPilot does it fo…" (marin)
+  ⚠ voice.instructions is a gpt-4o-mini-tts steering prompt — the local Kokoro provider ignores it
+  downloading onnx-community/Kokoro-82M-v1.0-ONNX (q8) from huggingface.co → /Users/saicharan/.cache/huggingface/transformersjs — first run only, cached after
+  scene s2-connect: "One click — demo wallet with real balances. Four…" (marin)
+  scene s3-portfolio: "Agent reads wallet, pulls fifty live pools, scor…" (marin)
+  scene s4-analysis: "AI ANALYSIS auto-runs. Six steps: fetching, scor…" (marin)
+  scene s5-yield-scan: "Live Yield Scan — ten real pools. Each row: prot…" (marin)
+  scene s6-recommendation: "Recommended donut: sixty percent Maple, thirty F…" (marin)
+  scene s7-simulate-preview: "Change your mind? Simulate any split — instant r…" (marin)
+  scene s8-close: "Live DeFi data. Explainable AI. Your wallet. You…" (marin)
+  ✓ narration → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/audio/narration.mp3 (8 scenes, ~82s; 8 voiced, 0 reused)
+  ✓ voice.json → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/audio/voice.json
+  ⚠ narration 81.5s + intro 2.6s + outro 2.6s = 86.7s exceeds targetLengthSeconds 60 (measured pace 1.9 w/s — budget ≈ 113 words)
+    scene       words    sec   w/s
+    s1-problem     15    8.0   1.9
+    s2-connect     16    7.2   2.2
+    s3-portfolio     17    8.2   2.1
+    s4-analysis     15   10.4   1.4
+    s5-yield-scan     29   14.5   2.0
+    s6-recommendation     28   14.5   1.9
+    s7-simulate-preview     23   10.6   2.2
+    s8-close       10    5.8   1.7
+
+▶ Recording "DeFiPilot — AI Agent for DeFi Yield"
+  profile: /Users/saicharan/Documents/aidemo/chrome-profile
+    ! profile already holds cookies/localStorage for http://localhost:3000 — a first-run gate, onboarding step or one-shot flow may be skipped, and the take would look fine while showing the wrong story. Re-run with --fresh for a clean identity — or, if the profile is seeded on purpose, set setup.expectState: true (CLI --profile-seeded) to silence this.
+  viewport: 1280x720
+  previous take preserved → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/recordings/raw.prev.webm, /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/generated/timeline.prev.json
+  scene s1-problem: 3 action(s)
+    page quiet after +280ms (idle "load")
+  scene s2-connect: 4 action(s)
+  video 57560ms, content 24019ms, failed-scene tail 33272ms → lead-in 269ms
+  ✓ recording → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/recordings/raw.webm
+  ✓ timeline  → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/generated/timeline.json (1 scenes, 24019ms)
+  salvaged 1/8 scene(s) before failure; see logs/ for the screenshot + frame dump, then re-run

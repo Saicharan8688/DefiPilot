@@ -1,0 +1,42 @@
+{
+  "sceneId": "s2-connect",
+  "actionIndex": 1,
+  "selector": "button.rounded-full.bg-gradient-to-r",
+  "url": "http://localhost:3000/",
+  "candidates": [
+    {
+      "role": "button",
+      "name": "“What happens to my portfolio concentration?”",
+      "tag": "button",
+      "selector": "div > div:nth-of-type(2) > div > button:nth-of-type(6)",
+      "selectors": [
+        "div > div:nth-of-type(2) > div > button:nth-of-type(6)"
+      ],
+      "rect": {
+        "x": 829,
+        "y": 3200,
+        "w": 346,
+        "h": 34
+      },
+      "inViewport": false,
+      "score": 0.322
+    },
+    {
+      "role": "button",
+      "name": "“How much yield could I potentially earn?”",
+      "tag": "button",
+      "selector": "div > div:nth-of-type(2) > div > button:nth-of-type(5)",
+      "selectors": [
+        "div > div:nth-of-type(2) > div > button:nth-of-type(5)"
+      ],
+      "rect": {
+        "x": 829,
+        "y": 3158,
+        "w": 346,
+        "h": 34
+      },
+      "inViewport": false,
+      "score": 0.271
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "totalMs": 24019,
+  "leadInMs": 269,
+  "scenes": [
+    {
+      "id": "s1-problem",
+      "startMs": 66,
+      "endMs": 24019,
+      "idleSpans": [
+        {
+          "startMs": 4894,
+          "endMs": 5174,
+          "label": "load"
+        }
+      ],
+      "focusEvents": [],
+      "stillEvents": [],
+      "cursorSamples": [],
+      "actions": [
+        {
+          "index": 0,
+          "op": "goto",
+          "startMs": 72,
+          "endMs": 5174,
+          "ok": true,
+          "target": "http://localhost:3000/"
+        },
+        {
+          "index": 1,
+          "op": "pause",
+          "startMs": 5175,
+          "endMs": 6176,
+          "ok": true
+        },
+        {
+          "index": 2,
+          "op": "scrollBy",
+          "startMs": 6176,
+          "endMs": 24018,
+          "ok": true,
+          "target": "body"
+        }
+      ],
+      "attentionEvents": [],
+      "keyEvents": [],
+      "redactSpans": [],
+      "anchorEvents": [],
+      "hash": "e6395482414c39ae"
+    }
+  ]
+}

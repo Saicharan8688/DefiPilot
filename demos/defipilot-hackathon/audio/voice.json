@@ -1,0 +1,53 @@
+{
+  "gapMs": 300,
+  "scenes": [
+    {
+      "id": "s1-problem",
+      "file": "/Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/audio/scene-s1-problem.mp3",
+      "durationMs": 8000,
+      "hash": "236ddd3aa210fafa"
+    },
+    {
+      "id": "s2-connect",
+      "file": "/Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/audio/scene-s2-connect.mp3",
+      "durationMs": 7200,
+      "hash": "2ad43e1c00ab8aa3"
+    },
+    {
+      "id": "s3-portfolio",
+      "file": "/Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/audio/scene-s3-portfolio.mp3",
+      "durationMs": 8225,
+      "hash": "8b3af4947e8e06c2"
+    },
+    {
+      "id": "s4-analysis",
+      "file": "/Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/audio/scene-s4-analysis.mp3",
+      "durationMs": 10400,
+      "hash": "923c20386c9b7104"
+    },
+    {
+      "id": "s5-yield-scan",
+      "file": "/Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/audio/scene-s5-yield-scan.mp3",
+      "durationMs": 14500,
+      "hash": "c6fb4b5e6c2b8019"
+    },
+    {
+      "id": "s6-recommendation",
+      "file": "/Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/audio/scene-s6-recommendation.mp3",
+      "durationMs": 14475,
+      "hash": "22aafe3740ca4df3"
+    },
+    {
+      "id": "s7-simulate-preview",
+      "file": "/Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/audio/scene-s7-simulate-preview.mp3",
+      "durationMs": 10600,
+      "hash": "27759cbd26435514"
+    },
+    {
+      "id": "s8-close",
+      "file": "/Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/audio/scene-s8-close.mp3",
+      "durationMs": 5750,
+      "hash": "33e043900647a57c"
+    }
+  ]
+}

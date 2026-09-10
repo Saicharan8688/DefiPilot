@@ -1,0 +1,127 @@
+{
+  "_README": "Scaffold with PLACEHOLDER selectors — replace every #search / [data-demo=...] with your app's real hooks, then verify with `aidemo probe`. Keep scenes to one idea each; use waitForWidget for async waits so they get trimmed. For iframe-embedded apps (ChatGPT widgets), add a 'frames' entry and target with {frame:'<name>'} — see the record-demo skill.",
+  "title": "example",
+  "targetLengthSeconds": 55,
+  "video": {
+    "width": 1280,
+    "height": 800
+  },
+  "frames": {},
+  "voice": {
+    "voiceId": "marin",
+    "instructions": "Confident, friendly founder. Clear and warm, brisk but not rushed.",
+    "speed": 1.05
+  },
+  "zoom": {
+    "scale": 1.55,
+    "easeMs": 600,
+    "holdMs": 1700
+  },
+  "intro": {
+    "title": "example",
+    "subtitle": "<one-line value prop>",
+    "durationMs": 2600
+  },
+  "outro": {
+    "title": "<call to action>",
+    "subtitle": "<your-domain.example>",
+    "durationMs": 2600
+  },
+  "scenes": [
+    {
+      "id": "s1-search",
+      "narration": "Meet <product> — describe what you need in plain language, and it searches the live catalog for you.",
+      "actions": [
+        {
+          "op": "goto",
+          "url": "https://your-app.example/"
+        },
+        {
+          "op": "pause",
+          "ms": 1200
+        },
+        {
+          "op": "type",
+          "target": {
+            "selector": "#search"
+          },
+          "humanize": false,
+          "text": "<a realistic search query>"
+        },
+        {
+          "op": "press",
+          "key": "Enter"
+        },
+        {
+          "op": "waitForWidget",
+          "target": {
+            "selector": "[data-demo=result-card]"
+          },
+          "label": "thinking",
+          "timeoutMs": 30000
+        },
+        {
+          "op": "pause",
+          "ms": 1600
+        }
+      ]
+    },
+    {
+      "id": "s2-results",
+      "narration": "Results come back with the details that matter — so the best option jumps right out.",
+      "actions": [
+        {
+          "op": "scrollTo",
+          "target": {
+            "selector": "[data-demo=result-card]"
+          },
+          "easing": "smooth"
+        },
+        {
+          "op": "pause",
+          "ms": 1400
+        }
+      ]
+    },
+    {
+      "id": "s3-act",
+      "narration": "Pick one, and it goes straight into the basket — no forms, no friction.",
+      "actions": [
+        {
+          "op": "click",
+          "target": {
+            "selector": "[data-demo=add-to-cart]"
+          }
+        },
+        {
+          "op": "pause",
+          "ms": 1400
+        }
+      ]
+    },
+    {
+      "id": "s4-confirm",
+      "narration": "Check out in a single click, and you're done. That's <product> — <value prop, restated>.",
+      "actions": [
+        {
+          "op": "click",
+          "target": {
+            "selector": "[data-demo=checkout]"
+          }
+        },
+        {
+          "op": "waitForWidget",
+          "target": {
+            "selector": "[data-demo=order-confirmed]"
+          },
+          "label": "thinking",
+          "timeoutMs": 25000
+        },
+        {
+          "op": "pause",
+          "ms": 2200
+        }
+      ]
+    }
+  ]
+}

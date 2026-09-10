@@ -1,0 +1,94 @@
+{
+  "title": "DeFiPilot — AI Agent for DeFi Yield",
+  "targetLengthSeconds": 60,
+  "video": { "width": 1280, "height": 720 },
+  "voice": { "voiceId": "marin", "instructions": "Confident, friendly founder. Clear and warm, brisk but not rushed.", "speed": 1.05 },
+  "zoom": { "scale": 1.55, "easeMs": 600, "holdMs": 1700 },
+  "intro": { "title": "DeFiPilot", "subtitle": "AI agent for DeFi yield — live data, explainable AI, sandbox execution", "durationMs": 2600 },
+  "outro": { "title": "DeFiPilot", "subtitle": "Live DeFi data. Explainable AI. Your wallet. Your control.", "durationMs": 2600 },
+  "scenes": [
+    {
+      "id": "s1-problem",
+      "narration": "DeFi yields are fragmented. DeFiPilot does it for you: live data, explainable AI, sandbox execution.",
+      "actions": [
+        { "op": "goto", "url": "http://localhost:3000/" },
+        { "op": "pause", "ms": 1000 },
+        { "op": "scrollBy", "dy": 300, "target": { "selector": "body" }, "easing": "smooth", "durationMs": 1500 }
+      ]
+    },
+    {
+      "id": "s2-connect",
+      "narration": "One click — demo wallet with real balances. Four thousand dollars idle stablecoins. That's our opportunity.",
+      "actions": [
+        { "op": "click", "target": { "selector": "button.rounded-full.bg-gradient-to-r" } },
+        { "op": "pause", "ms": 1000 },
+        { "op": "click", "target": { "selector": "button:has-text('Portfolio B')" } },
+        { "op": "pause", "ms": 2500 }
+      ]
+    },
+    {
+      "id": "s3-portfolio",
+      "narration": "Agent reads wallet, pulls fifty live pools, scores risk, builds plan in three seconds. Deterministic, no hallucination.",
+      "actions": [
+        { "op": "scrollTo", "target": { "selector": "h2:has-text('Portfolio analysis')" }, "easing": "smooth" },
+        { "op": "pause", "ms": 1000 },
+        { "op": "hover", "target": { "selector": "canvas" } },
+        { "op": "pause", "ms": 1000 },
+        { "op": "scrollBy", "dy": 400, "easing": "smooth", "durationMs": 1500 }
+      ]
+    },
+    {
+      "id": "s4-analysis",
+      "narration": "AI ANALYSIS auto-runs. Six steps: fetching, scoring, filtering, optimizing, explaining, finalizing. Rule-based badge — deterministic.",
+      "actions": [
+        { "op": "scrollTo", "target": { "selector": "h2:has-text('AI ANALYSIS')" }, "easing": "smooth" },
+        { "op": "pause", "ms": 4000 }
+      ]
+    },
+    {
+      "id": "s5-yield-scan",
+      "narration": "Live Yield Scan — ten real pools. Each row: protocol, asset, APY, TVL, risk badge. Model penalizes low TVL, volatility, impermanent loss. Maple Low, Harvest High. You see why.",
+      "actions": [
+        { "op": "scrollTo", "target": { "selector": "h2:has-text('Live yield scan')" }, "easing": "smooth" },
+        { "op": "pause", "ms": 1000 },
+        { "op": "hover", "target": { "selector": "table tbody tr:first-child" } },
+        { "op": "pause", "ms": 800 },
+        { "op": "hover", "target": { "selector": "table tbody tr:last-child" } },
+        { "op": "pause", "ms": 800 },
+        { "op": "scrollBy", "dy": 500, "easing": "smooth", "durationMs": 2000 }
+      ]
+    },
+    {
+      "id": "s6-recommendation",
+      "narration": "Recommended donut: sixty percent Maple, thirty Fluid, ten Harvest BTC. Blended seventeen point seven percent APY, seven seventy four per year. Every number computed. Explanation is the receipt.",
+      "actions": [
+        { "op": "scrollTo", "target": { "selector": "h3:has-text('Recommended allocation')" }, "easing": "smooth" },
+        { "op": "pause", "ms": 1000 },
+        { "op": "click", "target": { "selector": "button:has-text('Warnings')" } },
+        { "op": "pause", "ms": 1500 },
+        { "op": "hover", "target": { "selector": "div:has-text('blended APY')" } },
+        { "op": "pause", "ms": 1000 }
+      ]
+    },
+    {
+      "id": "s7-simulate-preview",
+      "narration": "Change your mind? Simulate any split — instant recompute. Preview shows exact approvals and supplies. Nothing signs, nothing broadcasts. You stay in control.",
+      "actions": [
+        { "op": "scrollTo", "target": { "selector": "h3:has-text('Simulate strategy')" }, "easing": "smooth" },
+        { "op": "pause", "ms": 800 },
+        { "op": "drag", "target": { "selector": "input[type='range']:nth-of-type(3)" }, "to": { "target": { "selector": "input[type='range']:nth-of-type(1)" } } },
+        { "op": "pause", "ms": 1500 },
+        { "op": "click", "target": { "selector": "button:has-text('Prepare transaction')" } },
+        { "op": "pause", "ms": 2500 }
+      ]
+    },
+    {
+      "id": "s8-close",
+      "narration": "Live DeFi data. Explainable AI. Your wallet. Your control. DeFiPilot.",
+      "actions": [
+        { "op": "scrollTo", "target": { "selector": "h1" }, "easing": "smooth" },
+        { "op": "pause", "ms": 1200 }
+      ]
+    }
+  ]
+}

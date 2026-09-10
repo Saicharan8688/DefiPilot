@@ -1,0 +1,16 @@
+  lint: 0 error(s), 0 warning(s), 1 note(s) — predicted narration ≈61s @ 2.6 w/s
+    · [nav-first] s2-connect#1: scene opens with a click — the previous screen stays up (and this scene's narration starts over it) while the navigation lands
+    → pre-navigate: move the nav action to the END of the previous scene so this scene opens on its screen
+
+▶ Recording "DeFiPilot — AI Agent for DeFi Yield"
+  profile: /Users/saicharan/Documents/aidemo/chrome-profile
+  viewport: 1280x720
+  previous take preserved → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/recordings/raw.prev.webm, /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/generated/timeline.prev.json
+  scene s1-problem: 3 action(s)
+    page quiet after +238ms (idle "load")
+  scene s2-connect: 4 action(s)
+  scene s3-portfolio: 5 action(s)
+  video 76320ms, content 32572ms, failed-scene tail 39247ms → lead-in 4501ms
+  ✓ recording → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/recordings/raw.webm
+  ✓ timeline  → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/generated/timeline.json (2 scenes, 32572ms)
+  salvaged 2/8 scene(s) before failure; see logs/ for the screenshot + frame dump, then re-run

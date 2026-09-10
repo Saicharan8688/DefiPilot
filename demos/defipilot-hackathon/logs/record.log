@@ -1,0 +1,13 @@
+
+▶ Recording "DeFiPilot — AI Agent for DeFi Yield"
+  profile: /Users/saicharan/Documents/aidemo/chrome-profile
+    ! profile already holds cookies/localStorage for http://localhost:3000 — a first-run gate, onboarding step or one-shot flow may be skipped, and the take would look fine while showing the wrong story. Re-run with --fresh for a clean identity — or, if the profile is seeded on purpose, set setup.expectState: true (CLI --profile-seeded) to silence this.
+  viewport: 1280x720
+  previous take preserved → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/recordings/raw.prev.webm, /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/generated/timeline.prev.json
+  scene s1-problem: 3 action(s)
+    page quiet after +280ms (idle "load")
+  scene s2-connect: 4 action(s)
+  video 57560ms, content 24019ms, failed-scene tail 33272ms → lead-in 269ms
+  ✓ recording → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/recordings/raw.webm
+  ✓ timeline  → /Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/generated/timeline.json (1 scenes, 24019ms)
+  salvaged 1/8 scene(s) before failure; see logs/ for the screenshot + frame dump, then re-run

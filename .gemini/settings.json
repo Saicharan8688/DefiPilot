@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "aidemo": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "github:tandryukha/aidemo#stable",
+        "mcp"
+      ]
+    }
+  }
+}

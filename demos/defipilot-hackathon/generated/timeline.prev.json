@@ -1,0 +1,110 @@
+{
+  "totalMs": 32572,
+  "leadInMs": 4501,
+  "scenes": [
+    {
+      "id": "s1-problem",
+      "startMs": 54,
+      "endMs": 18172,
+      "idleSpans": [
+        {
+          "startMs": 4941,
+          "endMs": 5179,
+          "label": "load"
+        }
+      ],
+      "focusEvents": [],
+      "stillEvents": [],
+      "cursorSamples": [],
+      "actions": [
+        {
+          "index": 0,
+          "op": "goto",
+          "startMs": 56,
+          "endMs": 5181,
+          "ok": true,
+          "target": "http://localhost:3000/"
+        },
+        {
+          "index": 1,
+          "op": "pause",
+          "startMs": 5181,
+          "endMs": 6182,
+          "ok": true
+        },
+        {
+          "index": 2,
+          "op": "scrollBy",
+          "startMs": 6182,
+          "endMs": 18172,
+          "ok": true,
+          "target": "body"
+        }
+      ],
+      "attentionEvents": [],
+      "keyEvents": [],
+      "redactSpans": [],
+      "anchorEvents": [],
+      "hash": "e6395482414c39ae"
+    },
+    {
+      "id": "s2-connect",
+      "startMs": 18176,
+      "endMs": 32572,
+      "idleSpans": [],
+      "focusEvents": [
+        {
+          "tMs": 25998,
+          "x": 1120.546875,
+          "y": 32,
+          "kind": "click"
+        },
+        {
+          "tMs": 30070,
+          "x": 1048,
+          "y": 193,
+          "kind": "click"
+        }
+      ],
+      "stillEvents": [],
+      "cursorSamples": [],
+      "actions": [
+        {
+          "index": 0,
+          "op": "click",
+          "startMs": 18176,
+          "endMs": 25998,
+          "ok": true,
+          "target": "button.rounded-full.bg-gradient-to-r"
+        },
+        {
+          "index": 1,
+          "op": "pause",
+          "startMs": 25998,
+          "endMs": 26999,
+          "ok": true
+        },
+        {
+          "index": 2,
+          "op": "click",
+          "startMs": 26999,
+          "endMs": 30070,
+          "ok": true,
+          "target": "button:has-text('Portfolio B')"
+        },
+        {
+          "index": 3,
+          "op": "pause",
+          "startMs": 30070,
+          "endMs": 32572,
+          "ok": true
+        }
+      ],
+      "attentionEvents": [],
+      "keyEvents": [],
+      "redactSpans": [],
+      "anchorEvents": [],
+      "hash": "7206e9b3cda9fedc"
+    }
+  ]
+}

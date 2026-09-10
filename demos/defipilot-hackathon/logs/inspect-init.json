@@ -1,0 +1,183 @@
+{
+  "url": "http://localhost:3000",
+  "finalUrl": "http://localhost:3000/",
+  "title": "DeFiPilot — AI-Powered DeFi Financial Agent",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "headings": [
+    {
+      "level": 1,
+      "text": "Your AI DeFi analyst — plans you can see and explain"
+    },
+    {
+      "level": 3,
+      "text": "Connect your wallet"
+    },
+    {
+      "level": 3,
+      "text": "Analyze your portfolio"
+    },
+    {
+      "level": 3,
+      "text": "Ask the AI"
+    },
+    {
+      "level": 3,
+      "text": "Get a recommendation"
+    },
+    {
+      "level": 3,
+      "text": "Simulate"
+    },
+    {
+      "level": 3,
+      "text": "Live DeFi yields"
+    },
+    {
+      "level": 3,
+      "text": "Explainable AI"
+    },
+    {
+      "level": 3,
+      "text": "Simulate first"
+    },
+    {
+      "level": 3,
+      "text": "No fabricated numbers"
+    },
+    {
+      "level": 2,
+      "text": "Live yield scan"
+    }
+  ],
+  "elements": [
+    {
+      "role": "link",
+      "name": "D DeFiPilot",
+      "tag": "a",
+      "selector": "a[href=\"/\"]",
+      "selectors": [
+        "a[href=\"/\"]",
+        "a.flex.items-center",
+        "a:has-text(\"D DeFiPilot\")"
+      ],
+      "rect": {
+        "x": 88,
+        "y": 16,
+        "w": 108,
+        "h": 32
+      },
+      "inViewport": true,
+      "href": "/"
+    },
+    {
+      "role": "link",
+      "name": "Analyze",
+      "tag": "a",
+      "selector": "a:has-text(\"Analyze\")",
+      "selectors": [
+        "a:has-text(\"Analyze\")"
+      ],
+      "rect": {
+        "x": 509,
+        "y": 22,
+        "w": 50,
+        "h": 20
+      },
+      "inViewport": true,
+      "href": "#portfolio"
+    },
+    {
+      "role": "link",
+      "name": "Live scan",
+      "tag": "a",
+      "selector": "a:has-text(\"Live scan\")",
+      "selectors": [
+        "a:has-text(\"Live scan\")"
+      ],
+      "rect": {
+        "x": 584,
+        "y": 22,
+        "w": 60,
+        "h": 20
+      },
+      "inViewport": true,
+      "href": "#opportunities"
+    },
+    {
+      "role": "link",
+      "name": "AI analysis",
+      "tag": "a",
+      "selector": "a:has-text(\"AI analysis\")",
+      "selectors": [
+        "a:has-text(\"AI analysis\")"
+      ],
+      "rect": {
+        "x": 668,
+        "y": 22,
+        "w": 68,
+        "h": 20
+      },
+      "inViewport": true,
+      "href": "#ai-analysis"
+    },
+    {
+      "role": "button",
+      "name": "Connect Wallet",
+      "tag": "button",
+      "selector": "button.rounded-full.bg-gradient-to-r",
+      "selectors": [
+        "button.rounded-full.bg-gradient-to-r",
+        "button:has-text(\"Connect Wallet\")"
+      ],
+      "rect": {
+        "x": 1049,
+        "y": 14,
+        "w": 143,
+        "h": 36
+      },
+      "inViewport": true
+    },
+    {
+      "role": "link",
+      "name": "Analyze my wallet →",
+      "tag": "a",
+      "selector": "a.rounded-xl.bg-gradient-to-r",
+      "selectors": [
+        "a.rounded-xl.bg-gradient-to-r",
+        "a:has-text(\"Analyze my wallet →\")"
+      ],
+      "rect": {
+        "x": 441,
+        "y": 563,
+        "w": 187,
+        "h": 44
+      },
+      "inViewport": true,
+      "href": "#portfolio"
+    },
+    {
+      "role": "link",
+      "name": "See the live yield scan",
+      "tag": "a",
+      "selector": "a.rounded-xl.border",
+      "selectors": [
+        "a.rounded-xl.border",
+        "a:has-text(\"See the live yield scan\")"
+      ],
+      "rect": {
+        "x": 640,
+        "y": 562,
+        "w": 200,
+        "h": 46
+      },
+      "inViewport": true,
+      "href": "#opportunities"
+    }
+  ],
+  "iframes": [],
+  "truncated": false,
+  "screenshot": "/Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/logs/inspect-init.png"
+}

@@ -1,0 +1,40 @@
+{
+  "sceneId": "s2-connect",
+  "actionIndex": 3,
+  "selector": "[role='menuitem']:has-text('Portfolio B')",
+  "url": "http://localhost:3000/",
+  "candidates": [
+    {
+      "role": "button",
+      "name": "Portfolio C Dominated by ETH and volatile assets.",
+      "tag": "button",
+      "selector": "div > div:nth-of-type(2) > div > button:nth-of-type(3)",
+      "selectors": [
+        "div > div:nth-of-type(2) > div > button:nth-of-type(3)"
+      ],
+      "rect": {
+        "x": 905,
+        "y": 224,
+        "w": 286,
+        "h": 62
+      },
+      "inViewport": true,
+      "score": 0.4
+    },
+    {
+      "role": "button",
+      "name": "Portfolio B A mix of ETH and stablecoins.",
+      "tag": "button",
+      "selector": "",
+      "selectors": [],
+      "rect": {
+        "x": 905,
+        "y": 162,
+        "w": 286,
+        "h": 62
+      },
+      "inViewport": true,
+      "score": 0.25
+    }
+  ]
+}

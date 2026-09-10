@@ -1,0 +1,19 @@
+{
+  "sceneId": "s3-portfolio",
+  "actionIndex": 3,
+  "action": {
+    "op": "hover",
+    "target": {
+      "selector": "canvas"
+    }
+  },
+  "selector": "canvas",
+  "url": "http://localhost:3000/",
+  "widgetFrames": [],
+  "allFrames": [
+    "http://localhost:3000/"
+  ],
+  "failedRequests": [],
+  "driftFile": "/Users/saicharan/Desktop/BlockChain/demos/defipilot-hackathon/logs/drift-s3-portfolio-3.json",
+  "driftCandidates": []
+}
