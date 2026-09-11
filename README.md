@@ -135,7 +135,7 @@ The Q&A chat (`/api/ask`) is **always deterministic** — it classifies the inte
 - **Styling**: Tailwind CSS 4
 - **Blockchain**: `wagmi` 2.19, `viem` 2.56, RainbowKit 2.2.11 (mainnet + Sepolia; read-only)
 - **Data**: DefiLlama `yields` + `coins` APIs (live), public RPCs
-- **AI**: OpenAI SDK (`gpt-4o-mini`, optional) + deterministic fallback/QA engines
+- **AI**: OpenRouter SDK (`openai/gpt-4o-mini`, optional) + deterministic fallback/QA engines
 - **State/data fetching**: `@tanstack/react-query`
 
 ## 9. Main features
@@ -168,8 +168,9 @@ All variables are optional — the app runs fully in **Demo Mode** with none of 
 | `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` | *(empty)* | Empty = Demo Mode (simulated wallets). Set to enable RainbowKit real wallets. |
 | `NEXT_PUBLIC_CHAIN_ID` | `1` | Default chain for reads (mainnet). |
 | `NEXT_PUBLIC_OPPORTUNITY_LIMIT` | `10` | Default number of opportunities returned. |
-| `OPENAI_API_KEY` | *(empty)* | Empty = rule-based planner. Set to enable the LLM tool-calling agent. |
-| `OPENAI_MODEL` | `gpt-4o-mini` | Model used for the agent + explanations. |
+| `OPENROUTER_API_KEY` | *(empty)* | Empty = rule-based planner. Set to enable the LLM tool-calling agent. Get a free key at [openrouter.ai/keys](https://openrouter.ai/keys). |
+| `OPENROUTER_MODEL` | `openai/gpt-4o-mini` | Model used for the agent + explanations. See [openrouter.ai/models](https://openrouter.ai/models) for free models. |
+| `NEXT_PUBLIC_APP_URL` | `http://localhost:3000` | App URL for OpenRouter attribution (optional but recommended). |
 | `DEFILLAMA_BASE_URL` | `https://yields.llama.fi` | Yield data endpoint override (mainly for testing). |
 | `DEFILLAMA_CACHE_TTL_MS` | `300000` | In-memory pool cache TTL (min 30 000). |
 | `RPC_URL` | `https://ethereum.publicnode.com` | Mainnet RPC (read-only). |
@@ -187,12 +188,23 @@ npm run dev:all    # start app + Telegram poller together (single command)
 npm run build      # production build
 npm run start      # serve the production build
 npm run test       # unit tests (vitest, offline)
+npm run test:demo  # Playwright demo recording test (records 60s video)
 npm run lint       # ESLint (flat config)
 npm run typecheck  # tsc --noEmit
 npm run telegram:watch  # Telegram long-poller (local bot integration)
 ```
 
 Open http://localhost:3000. No configuration needed.
+
+### Recording a demo video (Playwright)
+
+```bash
+npm run build
+npm run start &
+npm run test:demo
+```
+
+This records a full 60-second demo flow as `test-results/**/*.webm` (headless Chromium, 1280x720). The test covers the full judge flow: connect wallet → portfolio → AI analysis → yield scan → recommendation → simulation → transaction preview.
 
 ### Quick Demo Start (for judges)
 
@@ -247,7 +259,7 @@ The bot replies, registers the wallet for all three triggers (yield alerts, port
 4. Expand **Simulate** to tweak the proposed split and see deterministic outcomes, or **Prepare transaction (preview)** to inspect the simulated approval + supply steps.
 5. Ask the chat questions — *"why this allocation?"*, *"allocate 50% instead"*, *"which pick is riskiest?"* — and see it recompute honest answers.
 
-Recommended: leave `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` and `OPENAI_API_KEY` **empty** for judging (deterministic, free, fully functional). To see the LLM agent in action, set `OPENAI_API_KEY` and re-analyze — the plan shape is identical, only the reasoning/prose layer changes.
+Recommended: leave `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` and `OPENROUTER_API_KEY` **empty** for judging (deterministic, free, fully functional). To see the LLM agent in action, set `OPENROUTER_API_KEY` and re-analyze — the plan shape is identical, only the reasoning/prose layer changes.
 
 ## 14. Limitations (honest)
 
@@ -257,7 +269,7 @@ Recommended: leave `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` and `OPENAI_API_KEY` *
 - **Prices can be absent.** DefiLlama price misses surface as `priceUsd: null` with a "price unavailable" label — never a fabricated price.
 - **Live data can be down.** DefiLlama or public RPC outages degrade to labelled fallbacks (error states, simulated chain feed). Cached successes are kept for 5 minutes.
 - **Optional LLM quality.** Without a key the two-word-cost round is rule-based; the LLM path adds latency and a paid dependency. On any LLM failure the app falls back automatically.
-- **Unit tests cover deterministic core + protection layer.** The current `npm run test` (vitest) tests the pure, offline modules — risk model, simulation math, formatting utilities, portfolio snapshots, and the notification templates/store. There is no integration/E2E test suite yet.
+- **Unit tests cover deterministic core + protection layer.** The current `npm run test` (vitest) tests the pure, offline modules — risk model, simulation math, formatting utilities, portfolio snapshots, and the notification templates/store. **A Playwright demo recording test (`npm run test:demo`) covers the full 60s judge flow but is not a comprehensive integration/E2E test suite.**
 
 ## 15. Security considerations
 
