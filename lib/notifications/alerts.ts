@@ -8,6 +8,7 @@ import { sendTelegramMessage } from "@/lib/notifications/telegram";
 import { getSubscribersByTrigger } from "@/lib/notifications/store";
 import { yieldAlertMessage, portfolioSummaryMessage } from "@/lib/notifications/templates";
 import { getMockPortfolio } from "@/lib/mock/portfolio";
+import { getLiveBalances } from "@/lib/chain/balances";
 import { buildSnapshot } from "@/lib/ai/metrics";
 import type { Address } from "@/lib/types";
 
@@ -89,7 +90,14 @@ export async function sendPortfolioSummary(
   walletAddress: Address
 ): Promise<{ sent: boolean; error?: string }> {
   try {
-    const portfolio = getMockPortfolio(walletAddress);
+    // Try to fetch live on-chain balances first
+    let portfolio;
+    try {
+      portfolio = await getLiveBalances(walletAddress, 1); // Ethereum mainnet
+    } catch (liveError) {
+      // Fall back to mock portfolio if live read fails
+      portfolio = getMockPortfolio(walletAddress);
+    }
     const snapshot = buildSnapshot(portfolio);
 
     // Get best opportunity.

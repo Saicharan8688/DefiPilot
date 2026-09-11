@@ -25,6 +25,9 @@ test('Record 60-second DeFiPilot demo', async ({ page }) => {
   await portfolioB.click();
   await page.waitForTimeout(2500);
 
+  // Wait for wallet connection to be established and query to trigger
+  await page.waitForTimeout(3000);
+
   // --- 15-25s: AI Analysis auto-runs ---
   const portfolioSection = page.locator('h2:has-text("Portfolio analysis")');
   await expect(portfolioSection).toBeVisible({ timeout: 10000 });
@@ -40,8 +43,8 @@ test('Record 60-second DeFiPilot demo', async ({ page }) => {
   await page.waitForTimeout(1500);
 
   // Wait for AI Analysis to complete - look for the AI ANALYSIS section with recommendation
-  const aiAnalysisHeader = page.locator('h2:has-text("AI ANALYSIS")');
-  await expect(aiAnalysisHeader).toBeVisible({ timeout: 10000 });
+  const aiAnalysisHeader = page.locator('h2:has-text("Your AI analysis")');
+  await expect(aiAnalysisHeader).toBeVisible({ timeout: 15000 });
   await aiAnalysisHeader.scrollIntoViewIfNeeded();
 
   // Force scroll to AI Analysis section to trigger the query
